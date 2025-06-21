@@ -2,24 +2,21 @@
 
 pragma solidity ^0.8.30;
 
-contract Visibilidade{
+contract ValoresReferencia{
 
-    int public contagem;
+    int public valor;
+    string public nome;
 
-    function incrementa() public{
-        incrementaInterno();
+    function setValor(int _valor) public{
+        valor = _valor;
     }
 
-    function incrementaExterno() external{
-        incrementaPrivate();
+    function setNome(string memory _nome) public{
+        nome = _nome;
     }
 
-    function incrementaPrivate() private{
-        contagem = contagem + 1;
-    }
-
-    function incrementaInterno() internal{
-        contagem = contagem + 1;
+    function mostraNome() public view returns(string memory){
+        return nome;
     }
 
 }
